@@ -19,6 +19,7 @@ module.exports = {
     port: 8564,
     open: true,
     hot: true,
+    compress: true,
   },
   performance: {
     maxAssetSize: 1000000,

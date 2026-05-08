@@ -1,10 +1,9 @@
 import $ from 'jquery';
 import './header.css';
-import logo from '../../assets/holberton-logo.jpg';
 
 $('body').prepend(
   `<header>
-    <img id="logo" src="${logo}" alt="Holberton logo" />
+    <div id="logo"></div>
     <h1>Holberton Dashboard</h1>
   </header>`
 );

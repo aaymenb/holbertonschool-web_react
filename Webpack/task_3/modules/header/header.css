@@ -6,10 +6,12 @@ header {
   border-bottom: 1px solid #eee;
 }
 
-header #logo {
+#logo {
   width: 200px;
   height: 200px;
-  object-fit: contain;
+  background-image: url('../../assets/holberton-logo.jpg');
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
 }
 
 header h1 {
