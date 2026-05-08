@@ -1,0 +1,18 @@
+#main-section {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-section button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#main-section #count {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-weight: bold;
+}

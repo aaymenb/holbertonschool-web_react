@@ -8,8 +8,17 @@ node_modules/
 **/dist/*.bundle.js
 **/dist/*.map
 **/public/bundle.js
+**/public/*.bundle.js
 **/public/*.LICENSE.txt
 **/public/*.map
+**/public/*.jpg
+**/public/*.jpeg
+**/public/*.png
+**/public/*.gif
+**/public/*.svg
+
+# task_3: do NOT push the public/ directory at all
+Webpack/task_3/public/
 
 # Environment files
 .env
