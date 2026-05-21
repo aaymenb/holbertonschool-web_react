@@ -12,7 +12,7 @@ body {
   border-bottom: 3px solid #e1003c;
 }
 
-.App-header img {
+.App-header .App-logo {
   height: 200px;
   width: auto;
   margin-right: 20px;
