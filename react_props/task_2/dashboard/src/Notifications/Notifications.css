@@ -1,0 +1,37 @@
+.Notifications {
+  position: relative;
+  padding: 15px 40px 15px 20px;
+  border: 1px dashed #e1003c;
+  margin: 20px;
+  font-size: 1rem;
+}
+
+.Notifications p {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.Notifications ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.Notifications li {
+  padding: 4px 0;
+}
+
+.Notifications-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Notifications-close img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
