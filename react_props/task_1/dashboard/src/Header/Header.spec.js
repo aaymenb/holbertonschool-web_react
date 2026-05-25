@@ -8,6 +8,7 @@ describe('Header component', () => {
     expect(logo).toBeInTheDocument();
     expect(logo.tagName).toBe('IMG');
     expect(screen.getByAltText(/holberton logo/i)).toBe(logo);
+    expect(logo.getAttribute('src')).toContain('holberton-logo');
   });
 
   test('renders an h1 heading with the text "School dashboard"', () => {
