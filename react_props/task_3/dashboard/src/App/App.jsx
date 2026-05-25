@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React from 'react';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -14,12 +14,12 @@ const notificationsList = [
 
 function App() {
   return (
-    <Fragment>
+    <React.Fragment>
       <Notifications notifications={notificationsList} />
       <Header />
       <Login />
       <Footer />
-    </Fragment>
+    </React.Fragment>
   );
 }
 

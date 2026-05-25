@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React from 'react';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -21,12 +21,12 @@ const coursesList = [
 
 function App({ isLoggedIn = false }) {
   return (
-    <Fragment>
+    <React.Fragment>
       <Notifications displayDrawer notifications={notificationsList} />
       <Header />
       {isLoggedIn ? <CourseList courses={coursesList} /> : <Login />}
       <Footer />
-    </Fragment>
+    </React.Fragment>
   );
 }
 
