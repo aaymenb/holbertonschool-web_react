@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="App-footer">
-      <p>Copyright {getCurrentYear()} - holberton School</p>
+      <p>Copyright {getCurrentYear()} - Holberton School</p>
     </div>
   );
 }
