@@ -1,10 +1,9 @@
-import { getFooterCopy } from '../utils/utils';
 import './Login.css';
 
 function Login() {
   return (
     <div className="App-body">
-      <p>{getFooterCopy(false)}</p>
+      <p>Login to access the full dashboard</p>
       <div className="App-form">
         <div className="form-row">
           <label htmlFor="email">Email</label>

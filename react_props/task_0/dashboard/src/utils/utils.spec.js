@@ -9,12 +9,12 @@ describe('utils', () => {
   });
 
   describe('getFooterCopy', () => {
-    test('returns "Welcome back!" when the user is logged in', () => {
-      expect(getFooterCopy(true)).toBe('Welcome back!');
+    test('returns "Holberton School" when isIndex is true', () => {
+      expect(getFooterCopy(true)).toBe('Holberton School');
     });
 
-    test('returns "Login to access the full dashboard" when the user is not logged in', () => {
-      expect(getFooterCopy(false)).toBe('Login to access the full dashboard');
+    test('returns "Holberton School main dashboard" when isIndex is false', () => {
+      expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
     });
   });
 

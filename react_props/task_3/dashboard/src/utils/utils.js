@@ -2,11 +2,11 @@ export function getCurrentYear() {
   return new Date().getFullYear();
 }
 
-export function getFooterCopy(isLoggedIn) {
-  if (isLoggedIn) {
-    return 'Welcome back!';
+export function getFooterCopy(isIndex) {
+  if (isIndex === true) {
+    return 'Holberton School';
   }
-  return 'Login to access the full dashboard';
+  return 'Holberton School main dashboard';
 }
 
 export function getLatestNotification() {
