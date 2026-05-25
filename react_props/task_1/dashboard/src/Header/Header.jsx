@@ -7,7 +7,7 @@ const logoSrc =
 function Header() {
   return (
     <div className="App-header">
-      <img src={logoSrc} alt="holberton logo" />
+      <img src={logoSrc} alt="Holberton logo" />
       <h1>School dashboard</h1>
     </div>
   );

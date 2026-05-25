@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header.jsx';
+import Header from './Header';
 
 describe('Header component', () => {
   test('renders the Holberton logo', () => {
@@ -10,7 +10,7 @@ describe('Header component', () => {
     expect(logos).toHaveLength(1);
     expect(logo).toBeInTheDocument();
     expect(logo.tagName).toBe('IMG');
-    expect(screen.getByAltText(/holberton logo/i)).toBe(logo);
+    expect(screen.getByAltText('Holberton logo')).toBe(logo);
     expect(logo.getAttribute('src')).toBe('holberton-logo.jpg');
   });
 
