@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, Fragment } from 'react';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -19,17 +19,17 @@ const coursesList = [
   { id: 3, name: 'React', credit: 40 },
 ];
 
-class App extends React.Component {
+class App extends Component {
   render() {
     const { isLoggedIn } = this.props;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Notifications displayDrawer notifications={notificationsList} />
         <Header />
         {isLoggedIn ? <CourseList courses={coursesList} /> : <Login />}
         <Footer />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
