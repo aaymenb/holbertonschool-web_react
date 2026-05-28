@@ -1,0 +1,48 @@
+.App-body {
+  padding: 40px;
+  min-height: 50vh;
+}
+
+.App-body p {
+  font-size: 1.25rem;
+  margin: 0 0 20px 0;
+}
+
+.App-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.App-form .form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.App-form label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.App-form input {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.App-form button {
+  padding: 6px 16px;
+  font-size: 1rem;
+  background-color: #e1003c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.App-form button:hover {
+  background-color: #b50030;
+}
