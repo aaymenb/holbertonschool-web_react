@@ -1,4 +1,5 @@
 import holbertonLogo from '../assets/holberton-logo.jpg';
+import './Header.css';
 
 function Header() {
   return (

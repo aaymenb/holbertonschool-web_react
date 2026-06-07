@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import closeButton from '../assets/close-button.png';
 import NotificationItem from './NotificationItem';
+import './Notifications.css';
 
 class Notifications extends Component {
   constructor(props) {
