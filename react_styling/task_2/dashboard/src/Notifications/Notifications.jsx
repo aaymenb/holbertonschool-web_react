@@ -27,7 +27,7 @@ class Notifications extends Component {
     return (
       <>
         <div className="notification-title text-right font-bold cursor-pointer mt-5 mr-5 mb-2">
-          Your notifications
+          Your Notifications
         </div>
 
         {displayDrawer && (

@@ -32,7 +32,7 @@ class Notifications extends Component {
             shouldBounce ? 'animate-bounce' : ''
           }`}
         >
-          Your notifications
+          Your Notifications
         </div>
 
         {displayDrawer && (
