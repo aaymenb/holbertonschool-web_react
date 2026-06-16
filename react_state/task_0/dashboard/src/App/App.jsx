@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -7,7 +7,6 @@ import CourseList from '../CourseList/CourseList';
 import BodySection from '../BodySection/BodySection';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 import { getLatestNotification } from '../utils/utils';
-import './App.css';
 
 const notificationsList = [
   { id: 1, type: 'default', value: 'New course available' },
@@ -63,7 +62,7 @@ class App extends Component {
     const { isLoggedIn } = this.props;
 
     return (
-      <Fragment>
+      <div className="app-container flex flex-col min-h-screen p-4 max-[912px]:p-2 max-[520px]:p-0">
         <Notifications
           displayDrawer={this.state.displayDrawer}
           handleDisplayDrawer={this.handleDisplayDrawer}
@@ -84,7 +83,7 @@ class App extends Component {
           <p>Holberton School News goes here</p>
         </BodySection>
         <Footer />
-      </Fragment>
+      </div>
     );
   }
 }

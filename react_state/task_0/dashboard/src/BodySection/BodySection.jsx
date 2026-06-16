@@ -1,7 +1,7 @@
 function BodySection({ title, children }) {
   return (
-    <div className="bodySection">
-      <h2>{title}</h2>
+    <div className="bodySection px-10 py-2.5">
+      <h2 className="text-2xl text-[var(--main-color)] mb-4">{title}</h2>
       {children}
     </div>
   );
