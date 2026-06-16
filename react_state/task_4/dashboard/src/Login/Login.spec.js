@@ -1,0 +1,130 @@
+import { Component } from 'react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Login from './Login';
+
+class LoginTestHost extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+  }
+
+  handleChangeEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+
+  handleChangePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  render() {
+    return (
+      <Login
+        {...this.props}
+        email={this.state.email}
+        password={this.state.password}
+        handleChangeEmail={this.handleChangeEmail}
+        handleChangePassword={this.handleChangePassword}
+      />
+    );
+  }
+}
+
+test('testing signin form elements', () => {
+  render(<LoginTestHost />);
+
+  const inputElements = screen.getAllByLabelText(/email|password/i);
+  const emailLabelElement = screen.getByLabelText(/email/i);
+  const passwordLabelElement = screen.getByLabelText(/password/i);
+  const buttonElementText = screen.getByRole('button', { name: /ok/i });
+
+  expect(inputElements).toHaveLength(2);
+  expect(emailLabelElement).toBeInTheDocument();
+  expect(passwordLabelElement).toBeInTheDocument();
+  expect(buttonElementText).toBeInTheDocument();
+});
+
+test('it should check that the email input element will be focused whenever the associated label is clicked', async () => {
+  render(<LoginTestHost />);
+
+  const emailInput = screen.getByLabelText(/email/i);
+  const emailLabel = screen.getByText(/email/i);
+
+  userEvent.click(emailLabel);
+
+  await waitFor(() => {
+    expect(emailInput).toHaveFocus();
+  });
+});
+
+test('it should check that the password input element will be focused whenever the associated label is clicked', async () => {
+  render(<LoginTestHost />);
+
+  const passwordLabel = screen.getByText(/password/i);
+  const passwordInput = screen.getByLabelText(/password/i);
+
+  userEvent.click(passwordLabel);
+
+  await waitFor(() => {
+    expect(passwordInput).toHaveFocus();
+  });
+});
+
+test('submit button is disabled until email is valid and password has at least 8 characters', () => {
+  render(<LoginTestHost />);
+
+  const submitButton = screen.getByRole('button', { name: /ok/i });
+  expect(submitButton).toBeDisabled();
+
+  fireEvent.change(screen.getByLabelText(/email/i), {
+    target: { name: 'email', value: 'account@domain.ext' },
+  });
+  expect(submitButton).toBeDisabled();
+
+  fireEvent.change(screen.getByLabelText(/password/i), {
+    target: { name: 'password', value: 'qwerty' },
+  });
+  expect(submitButton).toBeDisabled();
+
+  fireEvent.change(screen.getByLabelText(/password/i), {
+    target: { name: 'password', value: 'password123' },
+  });
+  expect(submitButton).not.toBeDisabled();
+});
+
+test('handleChangeEmail and handleChangePassword update controlled inputs', () => {
+  render(<LoginTestHost />);
+
+  const emailInput = screen.getByLabelText(/email/i);
+  const passwordInput = screen.getByLabelText(/password/i);
+
+  fireEvent.change(emailInput, {
+    target: { name: 'email', value: 'test@holberton.com' },
+  });
+  fireEvent.change(passwordInput, {
+    target: { name: 'password', value: 'password123' },
+  });
+
+  expect(emailInput).toHaveValue('test@holberton.com');
+  expect(passwordInput).toHaveValue('password123');
+});
+
+test('calls logIn with email and password when the form is submitted', () => {
+  const logIn = jest.fn();
+  render(<LoginTestHost logIn={logIn} />);
+
+  fireEvent.change(screen.getByLabelText(/email/i), {
+    target: { name: 'email', value: 'test@holberton.com' },
+  });
+  fireEvent.change(screen.getByLabelText(/password/i), {
+    target: { name: 'password', value: 'password123' },
+  });
+  fireEvent.click(screen.getByRole('button', { name: /ok/i }));
+
+  expect(logIn).toHaveBeenCalledWith('test@holberton.com', 'password123');
+});

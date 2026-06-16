@@ -12,11 +12,9 @@ holbertonschool-web_react/
 └── react_state/
     ├── task_0/dashboard/             ← task 0 : état local notifications
     ├── task_1/dashboard/             ← task 1 : composants contrôlés (Login)
-    └── task_2/dashboard/             ← task 2 : React Context
-        └── src/
-            ├── Context/context.js
-            ├── App/App.jsx
-            └── Login/Login.jsx
+    ├── task_2/dashboard/             ← task 2 : React Context
+    ├── task_3/dashboard/             ← task 3 : logout dans le Header
+    └── task_4/dashboard/             ← task 4 : Context consumer + état avancé
 ```
 
 ## Soumission intranet
@@ -29,7 +27,7 @@ Le checker lance : `cd task_N/dashboard` depuis le dossier `react_state` (N = nu
 ## Démarrage
 
 ```bash
-cd react_state/task_2/dashboard
+cd react_state/task_4/dashboard
 npm install
 npm test
 npm run dev
