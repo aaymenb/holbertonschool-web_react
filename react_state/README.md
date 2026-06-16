@@ -11,10 +11,11 @@ holbertonschool-web_react/
 ├── react_styling/task_5/dashboard/   ← base (projet précédent)
 └── react_state/
     ├── task_0/dashboard/             ← task 0 : état local notifications
-    └── task_1/dashboard/             ← task 1 : composants contrôlés (Login)
+    ├── task_1/dashboard/             ← task 1 : composants contrôlés (Login)
+    └── task_2/dashboard/             ← task 2 : React Context
         └── src/
+            ├── Context/context.js
             ├── App/App.jsx
-            ├── Notifications/Notifications.jsx
             └── Login/Login.jsx
 ```
 
@@ -28,7 +29,7 @@ Le checker lance : `cd task_N/dashboard` depuis le dossier `react_state` (N = nu
 ## Démarrage
 
 ```bash
-cd react_state/task_1/dashboard
+cd react_state/task_2/dashboard
 npm install
 npm test
 npm run dev
