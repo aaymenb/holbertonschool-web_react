@@ -2,7 +2,7 @@
 
 ## Description
 
-A Holberton School project focused on managing local state in a React class component application. Each task progressively adds state and interaction logic while keeping the dashboard behavior from the previous React Styling project.
+A Holberton School project focused on managing local state in a React class component application. This module starts from the last task of the **React Styling** project (`react_styling/task_5`) and adds state and interaction logic progressively.
 
 ## Project structure
 
@@ -24,6 +24,8 @@ A Holberton School project focused on managing local state in a React class comp
 - npm >= 9
 
 ## Getting started
+
+From the `react_state` project directory:
 
 ```bash
 cd task_0/dashboard
