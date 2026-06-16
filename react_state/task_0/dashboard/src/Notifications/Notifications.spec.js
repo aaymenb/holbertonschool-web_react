@@ -96,6 +96,10 @@ describe('Notifications component', () => {
 
     test('calls handleDisplayDrawer when "Your notifications" is clicked', () => {
       const handleDisplayDrawer = jest.fn();
+      const displayDrawerSpy = jest.spyOn(
+        Notifications.prototype,
+        'handleDisplayDrawer'
+      );
       render(
         <Notifications
           notifications={notificationsList}
@@ -103,11 +107,17 @@ describe('Notifications component', () => {
         />
       );
       fireEvent.click(screen.getByText(/your notifications/i));
+      expect(displayDrawerSpy).toHaveBeenCalled();
       expect(handleDisplayDrawer).toHaveBeenCalled();
+      displayDrawerSpy.mockRestore();
     });
 
     test('calls handleHideDrawer when the close button is clicked', () => {
       const handleHideDrawer = jest.fn();
+      const hideDrawerSpy = jest.spyOn(
+        Notifications.prototype,
+        'handleHideDrawer'
+      );
       render(
         <Notifications
           displayDrawer
@@ -116,7 +126,9 @@ describe('Notifications component', () => {
         />
       );
       fireEvent.click(screen.getByRole('button', { name: /close/i }));
+      expect(hideDrawerSpy).toHaveBeenCalled();
       expect(handleHideDrawer).toHaveBeenCalled();
+      hideDrawerSpy.mockRestore();
     });
 
     test('logs when a notification item is marked as read', () => {
