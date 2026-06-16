@@ -5,16 +5,11 @@ import NotificationItem from './NotificationItem';
 class Notifications extends Component {
   constructor(props) {
     super(props);
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.markAsRead = this.markAsRead.bind(this);
   }
 
-  handleDisplayDrawer() {
-    this.props.handleDisplayDrawer();
-  }
-
-  handleHideDrawer() {
+  handleClick() {
     console.log('Close button has been clicked');
     this.props.handleHideDrawer();
   }
@@ -40,9 +35,9 @@ class Notifications extends Component {
           className={`notification-title text-right font-bold cursor-pointer mt-5 mr-5 mb-2 ${
             shouldBounce ? 'animate-bounce' : ''
           }`}
-          onClick={this.handleDisplayDrawer}
+          onClick={this.props.handleDisplayDrawer}
         >
-          Your notifications
+          Your Notifications
         </div>
 
         {displayDrawer && (
@@ -51,7 +46,7 @@ class Notifications extends Component {
               type="button"
               aria-label="Close"
               className="Notifications-close absolute top-2 right-2 bg-transparent border-none cursor-pointer p-0"
-              onClick={this.handleHideDrawer}
+              onClick={this.handleClick}
             >
               <img src={closeButton} alt="close" className="w-[14px] h-[14px] block" />
             </button>
