@@ -2,38 +2,32 @@
 
 ## Description
 
-A Holberton School project focused on managing local state in a React class component application. This module starts from the last task of the **React Styling** project (`react_styling/task_5`) and adds state and interaction logic progressively.
+Projet Holberton : gestion d'état local dans une application React (class components). Ce module part de la dernière tâche du projet **React Styling** (`react_styling/task_5`).
 
-## Project structure
+## Structure
 
-| Directory | Description |
-|-----------|-------------|
-| `task_0/` | Local state for notifications drawer (show/hide) |
-
-## Technologies
-
-- React 18
-- Vite 5
-- TailwindCSS v4 (`@tailwindcss/vite`)
-- `@fontsource/roboto` (weights 400, 500, 700)
-- Jest + React Testing Library
-
-## Requirements
-
-- Node.js >= 18
-- npm >= 9
-
-## Getting started
-
-From the `react_state` project directory:
-
-```bash
-cd task_0/dashboard
-npm install
-npm run dev
-npm test
+```
+holbertonschool-web_react/
+├── react_styling/task_5/dashboard/   ← base (projet précédent)
+└── react_state/
+    └── task_0/dashboard/             ← ce projet, task 0
+        └── src/
+            ├── App/App.jsx
+            └── Notifications/Notifications.jsx
 ```
 
-## Author
+## Soumission intranet
 
-Holberton School — Full-Stack curriculum
+- **Repository** : `holbertonschool-web_react`
+- **Directory** : `react_state`
+
+Le checker lance : `cd task_0/dashboard` depuis le dossier `react_state`.
+
+## Démarrage
+
+```bash
+cd react_state/task_0/dashboard
+npm install
+npm test
+npm run dev
+```
